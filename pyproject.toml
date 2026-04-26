@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "training-roi"
+version = "0.1.0"
+description = "Causal-uplift modelling for L&D — X-learner CATE for who-benefits-from-which-training"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn>=1.4",
+  "matplotlib",
+  "seaborn",
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic>=2",
+  "joblib",
+  "pyarrow",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "httpx",
+  "ruff",
+  "jupyterlab",
+  "mlflow",
+  "econml",
+  "dowhy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
